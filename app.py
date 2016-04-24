@@ -5,6 +5,8 @@ import markdown
 
 app = Flask(__name__)
 
+article_dir = 'articles/'
+
 @app.route('/')
 def index():
 	flist = os.listdir('articles')
@@ -13,7 +15,7 @@ def index():
 @app.route('/a/<file_name>')
 def article(file_name):
 	try:
-		fin = codecs.open('articles/'+file_name, mode='r', encoding='utf-8')
+		fin = codecs.open(article_dir + file_name, mode='r', encoding='utf-8')
 	except IOError:
 		return abort(404)
 	html = markdown.markdown(fin.read())
