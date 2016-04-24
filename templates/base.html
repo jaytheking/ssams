@@ -1,12 +1,54 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 	<head>
-		<title>ssams</title>
+		<title>Photon by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='assets/js/ie/html5shiv.js', _external=True) }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css', _external=True) }}" />
+		<!--[if lte IE 8]><link rel="{{ url_for('static', filename='assets/css/ie8.css', _external=True) }}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="{{ url_for('static', filename='assets/css/ie9.css', _external=True) }}" /><![endif]-->
 	</head>
-
 	<body>
-		<a href="{{ url_for('index') }}"><b>ssams</b></a>
-		<hr>
-		{% block content %}{% endblock %}
+
+		<!-- Header -->
+        {% if header %}
+			<section id="header">
+				<div class="inner">
+					<span class="icon major fa-cloud"></span>
+					<h1>Hi, I'm <strong>Photon</strong>, another fine<br />
+					little freebie from <a href="http://html5up.net">HTML5 UP</a>.</h1>
+					<p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
+					lobortis feugiat sapien sed etiam volutpat accumsan.</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Discover</a></li>
+					</ul>
+				</div>
+			</section>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</section>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js', _external=True) }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js', _external=True) }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/skel.min.js', _external=True) }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js', _external=True) }}"></script>
+			<!--[if lte IE 8]><script src="{{ url_for('static', filename='assets/js/ie/respond.min.js', _external=True) }}"></script><![endif]-->
+			<script src="{{ url_for('static', filename='assets/js/main.js', _external=True) }}"></script>
+
 	</body>
 </html>

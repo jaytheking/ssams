@@ -1,9 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
+<section id="three" class="main style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>Adipiscing amet consequat</h2>
+					</header>
+					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
+                <div class="row">
 		{% for f in flist %}
-			<li><a href="{{ url_for('article', file_name=f) }}">{{ f }}</a></li>
-		{% endfor %}
-	</ul>
+
+						<div class="4u">
+							<span class="image fit"><img src="{{ url_for('static', filename='images/pic04.jpg', _external=True) }}" alt="" /></span>
+							<h3>{{f[:-3]}}</h3>
+							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+							<ul class="actions">
+								<li><a href="{{ url_for('article', file_name=f) }}">Read more</a></li>
+							</ul>
+						</div>
+        {% endfor %}
+                </div>
+					</div>
+
+			</section>
 {% endblock %}
