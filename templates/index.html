@@ -8,14 +8,13 @@
 					</header>
 					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
                 <div class="row">
-		{% for f in flist %}
+		{% for a in articles %}
 
-						<div class="4u">
-							<span class="image fit"><img src="{{ url_for('static', filename='images/pic04.jpg', _external=True) }}" alt="" /></span>
-							<h3>{{f[:-3]}}</h3>
+						<div class="{{ per_page }}u">
+							<h3>{{a[:-3]}}</h3>
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<ul class="actions">
-								<li><a href="{{ url_for('article', file_name=f) }}">Read more</a></li>
+								<li><a href="{{ url_for('article', file_name=a) }}">Read more</a></li>
 							</ul>
 						</div>
         {% endfor %}
@@ -23,4 +22,9 @@
 					</div>
 
 			</section>
+{{ pagination.pages }}
+    {% for p in pagination.iter_pages() %}
+        <span><a href="{{ url_for_other_page(p) }}">{{ p }}</a></span>
+    {% endfor %}
+
 {% endblock %}
