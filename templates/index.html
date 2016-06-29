@@ -12,7 +12,6 @@
 
 						<div class="{{ per_page }}u">
 							<h3>{{a[:-3]}}</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<ul class="actions">
 								<li><a href="{{ url_for('article', file_name=a) }}">Read more</a></li>
 							</ul>
@@ -20,11 +19,9 @@
         {% endfor %}
                 </div>
 					</div>
+					{% for page in page_list %}
+					<span><a href="{{url_for_other_page(page)}}">{{page}}</a></span>
+					{% endfor %}
 
 			</section>
-{{ pagination.pages }}
-    {% for p in pagination.iter_pages() %}
-        <span><a href="{{ url_for_other_page(p) }}">{{ p }}</a></span>
-    {% endfor %}
-
 {% endblock %}
